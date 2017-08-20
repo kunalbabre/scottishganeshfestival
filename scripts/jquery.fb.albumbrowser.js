@@ -619,6 +619,16 @@
                         $(this).parent().find("img.fb-preview-img-next").click();
                         return false;
                     });
+                    
+                    $(overlay).on("swipeleft",function(){
+                        $(this).parent().find("img.fb-preview-img-prev").click();
+                        return false;
+                     });
+                     
+                    $(overlay).on("swiperight",function(){
+                        $(this).parent().find("img.fb-preview-img-next").click();
+                        return false;
+                     });                     
 
                     if (settings.likeButton) {
                         $("body").append("<div>", { id: "fb-root" });
