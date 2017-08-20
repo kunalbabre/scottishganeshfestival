@@ -304,14 +304,7 @@ ul#menu li a:hover, ul#menu li.selected a, ul#menu li.selected a:hover
     clear: both;
 }
 
-/* end clearfix*/
-
-/* below is just to make things easier to see, not required */
-body > div {
-    border:1px dashed red;
-    margin-bottom:10px;    
-}
-  
+/* end clearfix*/ 
 
 table
 { margin: 10px 0 30px 0;}
