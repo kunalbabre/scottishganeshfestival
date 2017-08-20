@@ -7,8 +7,10 @@
   <meta name="keywords" content="MMME, Ganesh, Ganpati Festival Edinburgh, Marathi Mandal Edinburgh" />
   <meta http-equiv="content-type" content="text/html; charset=windows-1252" />
   <link rel="stylesheet" type="text/css" href="style/style.css" title="style" />
-  <link rel="icon" 
-      href="/favicon.ico">
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+  <script type="text/javascript" src="scripts/jquery.fb.albumbrowser.js"></script>
+  <link rel="stylesheet" type="text/css" href="scripts/jquery.fb.albumbrowser.css" />  
+  <link rel="icon" href="/favicon.ico">
 
 
 </head>
@@ -44,6 +46,45 @@
 
         <h2>Program</h2>
                 <iframe src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2FScottishGaneshFestival%2Fvideos%2F654697631399037%2F&show_text=0&width=560" width="560" height="308" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allowFullScreen="true"></iframe>
+                <div class="fb-album-container"></div>
+
+                <script type="text/javascript">
+                    $(document).ready(function () {
+                      $(".fb-album-container").FacebookAlbumBrowser({
+                            account: "ScottishGaneshFestival",
+                            accessToken: "EAAchFBNxVrIBAD4AJInZAU0aOt76WamRzyNvpj2kM2qUG96kyeEoMZBgxT24LPROVQBs2OivAohDZAWAGfas9AaGxaFCdF8tPECuDDduqmzk7MubSonf0Ob7LezoltnT3GLBWO8ZAcKo0NFWeGCRBCm4YqpWzIsMt9l3AnYySKXzI3c1cEmQgE3wyXbZBDlqYJLtmg61TcwZDZD",
+                            onlyAlbum: "656989597836507",
+                            showComments: true,
+                            commentsLimit:3,
+                            showAccountInfo: true,
+                            showImageCount: true,
+                            showImageText: true,
+                            shareButton: false,
+                            albumsPageSize: 0,
+                            photosPageSize: 0,
+                            lightbox: true,
+                            photosCheckbox: false,
+                            pluginImagesPath: "scripts/",
+                            likeButton: false,
+                            shareButton: false,
+                            photoChecked: function(photo){
+                                console.log("PHOTO CHECKED: " + photo.id + " - " + photo.url + " - " + photo.thumb);
+                                console.log("CHECKED PHOTOS COUNT: " + this.checkedPhotos.length);
+                            },
+                            photoUnchecked: function (photo) {
+                                console.log("PHOTO UNCHECKED: " + photo.id + " - " + photo.url + " - " + photo.thumb);
+                                console.log("CHECKED PHOTOS COUNT: " + this.checkedPhotos.length);
+                            },
+                            albumSelected: function (photo) {
+                                console.log("ALBUM CLICK: " + photo.id + " - " + photo.url + " - " + photo.thumb);
+                            },
+                            photoSelected: function (photo) {
+                                console.log("PHOTO CLICK: " + photo.id + " - " + photo.url + " - " + photo.thumb);
+                            }
+                        });
+
+                    });
+                </script>
         <P></P>
         <h4>25<sup>th</sup> &amp; 26<sup>th</sup> August<sup>*</sup></h4>
         <P>Arrival (08:00 - 10:00 Am), Aarti-Prasad bhojan (06:00 - 09:00 PM)  </P>
