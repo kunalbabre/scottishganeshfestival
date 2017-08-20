@@ -7,7 +7,9 @@
   <meta name="keywords" content="MMME, Ganesh, Ganpati Festival Edinburgh, Marathi Mandal Edinburgh" />
   <meta http-equiv="content-type" content="text/html; charset=windows-1252" />
   <link rel="stylesheet" type="text/css" href="style/style.css" title="style" />
-  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">  
+  <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+  <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
   <script type="text/javascript" src="scripts/jquery.fb.albumbrowser.js"></script>
   <link rel="stylesheet" type="text/css" href="scripts/jquery.fb.albumbrowser.css" />  
   <link rel="icon" href="/favicon.ico">
@@ -46,45 +48,6 @@
 
         <h2>Program</h2>
                 <iframe src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2FScottishGaneshFestival%2Fvideos%2F654697631399037%2F&show_text=0&width=560" width="560" height="308" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allowFullScreen="true"></iframe>
-                <div class="fb-album-container"></div>
-
-                <script type="text/javascript">
-                    $(document).ready(function () {
-                      $(".fb-album-container").FacebookAlbumBrowser({
-                            account: "ScottishGaneshFestival",
-                            accessToken: "EAAchFBNxVrIBANN9zavTUI8GvqlaCQJcKZC0hyKZCGF03MRuqsQIiRdvZAVZAYxXBMDXU8n1sMFTN2hrjMaf7Uy47xZAvklZBG9bLYFuj4mUL73kPLhfeZBKZAZA5f8Ev65CrHhrwWOZCYQRbAjA5CacHETNdIfPZCKQS2kY7F0KIB9cwZDZD",
-                            onlyAlbum: "656989597836507",
-                            showComments: true,
-                            commentsLimit:3,
-                            showAccountInfo: true,
-                            showImageCount: true,
-                            showImageText: true,
-                            shareButton: false,
-                            albumsPageSize: 0,
-                            photosPageSize: 0,
-                            lightbox: true,
-                            photosCheckbox: false,
-                            pluginImagesPath: "scripts/",
-                            likeButton: false,
-                            shareButton: false,
-                            photoChecked: function(photo){
-                                console.log("PHOTO CHECKED: " + photo.id + " - " + photo.url + " - " + photo.thumb);
-                                console.log("CHECKED PHOTOS COUNT: " + this.checkedPhotos.length);
-                            },
-                            photoUnchecked: function (photo) {
-                                console.log("PHOTO UNCHECKED: " + photo.id + " - " + photo.url + " - " + photo.thumb);
-                                console.log("CHECKED PHOTOS COUNT: " + this.checkedPhotos.length);
-                            },
-                            albumSelected: function (photo) {
-                                console.log("ALBUM CLICK: " + photo.id + " - " + photo.url + " - " + photo.thumb);
-                            },
-                            photoSelected: function (photo) {
-                                console.log("PHOTO CLICK: " + photo.id + " - " + photo.url + " - " + photo.thumb);
-                            }
-                        });
-
-                    });
-                </script>
         <P></P>
         <h4>25<sup>th</sup> &amp; 26<sup>th</sup> August<sup>*</sup></h4>
         <P>Arrival (08:00 - 10:00 Am), Aarti-Prasad bhojan (06:00 - 09:00 PM)  </P>
@@ -114,9 +77,47 @@
           <p>07854004396, 07796133494, 07956110490, 07742496892 </p>
           <h4>Email:</h4>
           <p><a href="mailto:mmm_edinburgh@yahoo.com">mmm_edinburgh@yahoo.com</a></p>
-
-
       </div>
+    <div class="fb-album-container"></div>
+
+      <script type="text/javascript">
+          $(document).ready(function () {
+            $(".fb-album-container").FacebookAlbumBrowser({
+                  account: "ScottishGaneshFestival",
+                  accessToken: "EAAchFBNxVrIBANN9zavTUI8GvqlaCQJcKZC0hyKZCGF03MRuqsQIiRdvZAVZAYxXBMDXU8n1sMFTN2hrjMaf7Uy47xZAvklZBG9bLYFuj4mUL73kPLhfeZBKZAZA5f8Ev65CrHhrwWOZCYQRbAjA5CacHETNdIfPZCKQS2kY7F0KIB9cwZDZD",
+                  onlyAlbum: "656989597836507",
+                  showComments: false,
+                  commentsLimit:3,
+                  showAccountInfo: true,
+                  showImageCount: true,
+                  showImageText: false,
+                  shareButton: false,
+                  albumsPageSize: 0,
+                  photosPageSize: 0,
+                  lightbox: true,
+                  photosCheckbox: false,
+                  pluginImagesPath: "scripts/",
+                  likeButton: false,
+                  shareButton: false,
+                  photoChecked: function(photo){
+                      console.log("PHOTO CHECKED: " + photo.id + " - " + photo.url + " - " + photo.thumb);
+                      console.log("CHECKED PHOTOS COUNT: " + this.checkedPhotos.length);
+                  },
+                  photoUnchecked: function (photo) {
+                      console.log("PHOTO UNCHECKED: " + photo.id + " - " + photo.url + " - " + photo.thumb);
+                      console.log("CHECKED PHOTOS COUNT: " + this.checkedPhotos.length);
+                  },
+                  albumSelected: function (photo) {
+                      console.log("ALBUM CLICK: " + photo.id + " - " + photo.url + " - " + photo.thumb);
+                  },
+                  photoSelected: function (photo) {
+                      console.log("PHOTO CLICK: " + photo.id + " - " + photo.url + " - " + photo.thumb);
+                  }
+              });
+     
+          });
+      </script>      
+      
       <h2>Our Sponsors</h2>
       <img src="style/KalpanaLogo.png" alt="Kalpana" height="127" width="152">
       <img src="style/ShreeBhemasLogo.png" alt="ShreeBhemas" height="127" width="165">
