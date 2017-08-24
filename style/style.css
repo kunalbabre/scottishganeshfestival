@@ -188,7 +188,7 @@ ul#menu li a:hover, ul#menu li.selected a, ul#menu li.selected a:hover
 { text-align: left;
   width: 595px;
   padding: 0;}
-
+  
 #content ul
 { margin: 2px 0 22px 0px;}
 
@@ -199,6 +199,20 @@ ul#menu li a:hover, ul#menu li.selected a, ul#menu li.selected a:hover
   padding: 0 0 4px 25px;
   line-height: 1.5em;}
 
+#photo_content
+{ text-align: left;
+  width: 595px;
+  padding: 0;}  
+  
+#photo_content ul
+{ margin: 2px 0 22px 0px;}
+
+#photo_content ul li
+{ list-style-type: none;
+  background: url(bullet.png) no-repeat;
+  margin: 0 0 6px 0; 
+  padding: 0 0 4px 25px;
+  line-height: 1.5em;}
 #footer
 { width: 878px;
   font: normal 100% 'lucida sans unicode', arial, sans-serif;
