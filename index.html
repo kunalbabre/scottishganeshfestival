@@ -24,40 +24,43 @@
             $.mobile.loading( "hide" );
             $.mobile.loading().hide();
 
-            $(".fb-album-container").FacebookAlbumBrowser({
-                  account: "ScottishGaneshFestival",
-                  accessToken: "EAAchFBNxVrIBANN9zavTUI8GvqlaCQJcKZC0hyKZCGF03MRuqsQIiRdvZAVZAYxXBMDXU8n1sMFTN2hrjMaf7Uy47xZAvklZBG9bLYFuj4mUL73kPLhfeZBKZAZA5f8Ev65CrHhrwWOZCYQRbAjA5CacHETNdIfPZCKQS2kY7F0KIB9cwZDZD",
-                  onlyAlbum: "656989597836507",
-                  showComments: false,
-                  commentsLimit:3,
-                  showAccountInfo: true,
-                  showImageCount: true,
-                  showImageText: false,
-                  shareButton: false,
-                  albumsPageSize: 0,
-                  photosPageSize: 0,
-                  lightbox: true,
-                  photosCheckbox: false,
-                  pluginImagesPath: "scripts/",
-                  likeButton: false,
-                  shareButton: false,
-                  photoChecked: function(photo){
-                      console.log("PHOTO CHECKED: " + photo.id + " - " + photo.url + " - " + photo.thumb);
-                      console.log("CHECKED PHOTOS COUNT: " + this.checkedPhotos.length);
-                  },
-                  photoUnchecked: function (photo) {
-                      console.log("PHOTO UNCHECKED: " + photo.id + " - " + photo.url + " - " + photo.thumb);
-                      console.log("CHECKED PHOTOS COUNT: " + this.checkedPhotos.length);
-                  },
-                  albumSelected: function (photo) {
-                      console.log("ALBUM CLICK: " + photo.id + " - " + photo.url + " - " + photo.thumb);
-                  },
-                  photoSelected: function (photo) {
-                      console.log("PHOTO CLICK: " + photo.id + " - " + photo.url + " - " + photo.thumb);
-                  }
-              });
-     
-          });
+            $(".fb-album-container").each(function () {
+                $(this).FacebookAlbumBrowser({
+                    account: "ScottishGaneshFestival",
+                    accessToken: "EAAchFBNxVrIBANN9zavTUI8GvqlaCQJcKZC0hyKZCGF03MRuqsQIiRdvZAVZAYxXBMDXU8n1sMFTN2hrjMaf7Uy47xZAvklZBG9bLYFuj4mUL73kPLhfeZBKZAZA5f8Ev65CrHhrwWOZCYQRbAjA5CacHETNdIfPZCKQS2kY7F0KIB9cwZDZD",
+                    //skipAlbums: ["Profile Pictures", "Timeline Photos"],
+                    //includeAlbums: ["Profile Pictures", "Timeline Photos"],
+                    onlyAlbum: $(this).attr("data-album"),
+                    showComments: false,
+                    commentsLimit: 3,
+                    showAccountInfo: true,
+                    showImageCount: true,
+                    showImageText: true,
+                    shareButton: false,
+                    albumsPageSize: 0,
+                    photosPageSize: 0,
+                    lightbox: true,
+                    photosCheckbox: true,
+                    pluginImagesPath: "scripts/",
+                    likeButton: false,
+                    shareButton: false,
+                    photoChecked: function (photo) {
+                        console.log("PHOTO CHECKED: " + photo.id + " - " + photo.url + " - " + photo.thumb);
+                        console.log("CHECKED PHOTOS COUNT: " + this.checkedPhotos.length);
+                    },
+                    photoUnchecked: function (photo) {
+                        console.log("PHOTO UNCHECKED: " + photo.id + " - " + photo.url + " - " + photo.thumb);
+                        console.log("CHECKED PHOTOS COUNT: " + this.checkedPhotos.length);
+                    },
+                    albumSelected: function (photo) {
+                        console.log("ALBUM CLICK: " + photo.id + " - " + photo.url + " - " + photo.thumb);
+                    },
+                    photoSelected: function (photo) {
+                        console.log("PHOTO CLICK: " + photo.id + " - " + photo.url + " - " + photo.thumb);
+                    }
+                });
+            });
+        });
       </script>  
   <style>
   .ui-tabs-vertical { width: 55em; }
@@ -137,16 +140,19 @@
         <img src="style/KalpanaLogo.png" alt="Kalpana" height="127" width="152">
         <img src="style/ShreeBhemasLogo.png" alt="ShreeBhemas" height="127" width="165">
         <img src="style/SpiceLoungeLogo.png" alt="SpiceLounge" height="125" width="125">
-        <img src="style/KrishnaFoods.png" alt="KrishnaFoods" height="125" width="125">        
+        <img src="style/KrishnaFoods.png" alt="KrishnaFoods" height="125" width="125">
+        <img src="style/GoldenAmbalLogo.png" alt="GoldenAmbalLogo" height="114" width="180">        
         <img src="style/GuchhiLogo.png" alt="Guchhi" height="102" width="248">
         <img src="style/AmmaSpicesLogo.png" alt="AmmaSpices" height="102" width="248">
        </div>
        <div id="photo_content">
-         <div class="fb-album-container"></div>
+         <div class="fb-album-container" data-album="658841927651274"></div>
+         <div class="fb-album-container" data-album="656989597836507"></div>
          <h2>Our Sponsors</h2>
          <img src="style/KalpanaLogo.png" alt="Kalpana" height="127" width="152">
          <img src="style/ShreeBhemasLogo.png" alt="ShreeBhemas" height="127" width="165">
          <img src="style/SpiceLoungeLogo.png" alt="SpiceLounge" height="125" width="125">
+         <img src="style/GoldenAmbalLogo.png" alt="GoldenAmbalLogo" height="114" width="180">         
          <img src="style/KrishnaFoods.png" alt="KrishnaFoods" height="125" width="125">
          <img src="style/GuchhiLogo.png" alt="Guchhi" height="102" width="248">
          <img src="style/AmmaSpicesLogo.png" alt="AmmaSpices" height="102" width="248">
