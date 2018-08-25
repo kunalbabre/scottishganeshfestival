@@ -358,15 +358,28 @@
                                 var prefWidth = photoListItem.width();
                                 var prefHeight = photoListItem.height();
                                 var albumImg = $(result.data)[a].images[0];
+                                
+                                var prefPreviewWidth = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+                                var prefPreviewHeight = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);                                
+                                var previewImage = $(result.data)[a].images[0];
+
                                 for (i = 0; i < $(result.data)[a].images.length; i++) {
                                     if (
                                             ($(result.data)[a].images[i].height >= prefHeight && $(result.data)[a].images[i].width >= prefWidth) &&
                                             ($(result.data)[a].images[i].height <= albumImg.height && $(result.data)[a].images[i].width <= albumImg.width)
-                                        ) {
+                                    ) {
                                         albumImg = $(result.data)[a].images[i];
                                     }
                                 }
-                                var photoLink = $("<a>", { class: "fb-photo-thumb-link", href: $(result.data)[a].source, "data-fb-page": $(result.data)[a].link });
+                                
+                                for (i = 0; i < $(result.data)[a].images.length; i++) {
+                                    if (($(result.data)[a].images[i].height <= prefPreviewHeight && $(result.data)[a].images[i].width <= prefPreviewWidth)) {
+                                        previewImage = $(result.data)[a].images[i];
+                                        break;
+                                    }
+                                }
+
+                                var photoLink = $("<a>", { class: "fb-photo-thumb-link", href: previewImage.source, "data-fb-page": $(result.data)[a].link });
                                 var marginWidth = 0;
 
                                 if (prefWidth > 0) {
